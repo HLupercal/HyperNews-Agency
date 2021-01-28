@@ -8,15 +8,11 @@ from resume.models import Resume
 class ResumeView(View):
     def get(self, request, *args, **kwargs):
         resumes = Resume.objects.all()
-        print("Asdasdas")
         return render(request, "resume/resumes.html",
                       context={"resumes": resumes})
 
 class CreateResumeView(View):
     def post(self, request, *args, **kwargs):
-        print("AAA")
-        print(request.user)
-        print("AAA")
         is_authenticated = request.user.is_authenticated
         if is_authenticated:
             desc = request.POST.get("description")
