@@ -8,11 +8,11 @@ from django.views.generic import CreateView
 class SignUpView(CreateView):
     form_class = UserCreationForm
     success_url = "/login"
-    template_name = "signup.html"
+    template_name = "hyperjobauth/signup.html"
 
 
 class SignInView(LoginView):
     form_class = AuthenticationForm
     redirect_authenticated_user = True
-    template_name = "signin.html"
+    template_name = "hyperjobauth/signin.html"
 

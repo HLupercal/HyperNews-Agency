@@ -60,7 +60,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'hyperjobauth/templates/hyperjobauth')
+            # os.path.join(BASE_DIR, 'hyperjobauth/templates/hyperjobauth')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
