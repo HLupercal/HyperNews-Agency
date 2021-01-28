@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.core.exceptions import PermissionDenied
+from django.shortcuts import render, redirect
 from django.views import View
 
 from resume.models import Resume
@@ -10,3 +11,18 @@ class ResumeView(View):
         print("Asdasdas")
         return render(request, "resume/resumes.html",
                       context={"resumes": resumes})
+
+class CreateResumeView(View):
+    def post(self, request, *args, **kwargs):
+        print("AAA")
+        print(request.user)
+        print("AAA")
+        is_authenticated = request.user.is_authenticated
+        if is_authenticated:
+            desc = request.POST.get("description")
+            Resume.objects.create(description=desc,
+                                  author=request.user)
+            return redirect("/")
+        else:
+            raise PermissionDenied()
+
