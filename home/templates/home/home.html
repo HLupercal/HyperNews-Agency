@@ -5,8 +5,14 @@
     <title>Title</title>
     <form method="post" action="resume/new">
         {%csrf_token%}
-        description<input name="description" >
-        <button type="submit">Submit</button>
+        resume description<input name="description" >
+        <button type="submit">Submit resume</button>
+    </form>
+
+    <form method="post" action="vacancy/new">
+        {%csrf_token%}
+        vacancy description<input name="description" >
+        <button type="submit">Submit vacancy</button>
     </form>
 </head>
 <body>

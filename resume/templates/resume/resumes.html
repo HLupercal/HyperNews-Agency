@@ -8,11 +8,5 @@
     {% for resume in resumes %}
         <div>"{{resume.author}}: {{resume.description}}"</div>
     {% endfor %}
-
-    <form method="post" action="resume/new">
-        {%csrf_token%}
-        description<input name="description" >
-        <button type="submit">Submit</button>
-    </form>
 </body>
 </html>
