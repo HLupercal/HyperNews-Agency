@@ -17,9 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from menu.views import MainMenuView
 from vacancy.views import VacancyView
-from vacancy.views import CreateVacancyView
+from home.views import CreateVacancyView
 from resume.views import ResumeView
-from resume.views import CreateResumeView
+from home.views import CreateResumeView
+from home.views import HomeView
 from hyperjobauth.views import SignUpView
 from hyperjobauth.views import SignInView
 
@@ -29,6 +30,7 @@ urlpatterns = [
     path("signup", SignUpView.as_view()),
     path("login", SignInView.as_view()),
     path("vacancies", VacancyView.as_view()),
+    path("home", HomeView.as_view()),
     path("vacancy/new", CreateVacancyView.as_view()),
     path("resume/new", CreateResumeView.as_view()),
     path("resumes", ResumeView.as_view())
