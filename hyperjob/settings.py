@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'resume',
     'vacancy',
     'menu',
-    'hyperjobauth'
+    'hyperjobauth',
+    'home'
 ]
 
 MIDDLEWARE = [
@@ -58,7 +59,9 @@ ROOT_URLCONF = 'hyperjob.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'hyperjobauth/templates/hyperjobauth')],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'hyperjobauth/templates/hyperjobauth')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
