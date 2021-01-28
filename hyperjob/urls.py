@@ -18,10 +18,14 @@ from django.urls import path
 from menu.views import MainMenuView
 from vacancy.views import VacancyView
 from resume.views import ResumeView
+from hyperjobauth.views import SignUpView
+from hyperjobauth.views import SignInView
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
     path("", MainMenuView.as_view()),
+    path("signup", SignUpView.as_view()),
+    path("login", SignInView.as_view()),
     path("vacancies", VacancyView.as_view()),
     path("resumes", ResumeView.as_view())
 ]
