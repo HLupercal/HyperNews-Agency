@@ -8,10 +8,7 @@ from vacancy.views import Vacancy
 
 class HomeView(View):
     def get(self, request, *args, **kwargs):
-        is_authenticated = request.user.is_authenticated
-        if is_authenticated:
-            print("authenticated")
-            return render(request, "home/home.html")
+        return render(request, "home/home.html")
 
 class CreateResumeView(View):
     def post(self, request, *args, **kwargs):
