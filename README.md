@@ -1,2 +1,2 @@
 # HyperNews-Agency
-hyperskill django project
+simple hyperskill django project
